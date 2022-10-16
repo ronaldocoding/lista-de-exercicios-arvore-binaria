@@ -270,12 +270,12 @@ void printPreOrderWithParentheses(Node *root) {
 }
 
 bool areEquals(Node *rootA, Node *rootB) {
-    if(rootA != NULL && rootB == NULL) return 0;
-    if(rootA == NULL && rootB != NULL) return 0;
-    if(rootA == NULL && rootB == NULL) return 1;
-    if(rootA->key != rootB->key) return 0;
+    if(rootA != NULL && rootB == NULL) return false;
+    if(rootA == NULL && rootB != NULL) return false;
+    if(rootA == NULL && rootB == NULL) return true;
+    if(rootA->key != rootB->key) return false;
     return 
-        1 &&
+        true &&
         areEquals(rootA->left, rootB->left) &&
         areEquals(rootA->right, rootB->right);
 }
